@@ -82,7 +82,7 @@
   .intro h1 span {
     color: #9D84EF;
   }
-  
+
   .cv-btn {
     margin-top: 5px;
     background-color: #9D84EF;
@@ -93,9 +93,15 @@
     border: none;
   }
   
+  .cv-btn a {
+    text-decoration: none;
+    color: white; 
+  }
+  
   .cv-btn:hover {
-    background-color: #B28FFF;
+    background-color: #8fffd2bf;
     transition: 0.3s;
+    zoom: 1.01;
   }
   
   .profile-image {
