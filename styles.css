@@ -1,115 +1,226 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-}
-
-.hero{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: #eff4fd;
-    position: relative;
-}
-
-nav{
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+  }
+  
+  /* Navbar */
+  .navbar {
     display: flex;
-    width: 84%;
-    margin: auto;
-    padding: 20px 0;
-    align-items: center;
     justify-content: space-between;
-}
-
-.logo{
-    width: 100px;
-    cursor: pointer;
-}
-
-nav ul li {
-    display: inline-block;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+  }
+  
+  .navbar .logo {
+    color: white;
+    font-size: 24px;
+  }
+  
+  .navbar ul {
     list-style: none;
-    margin: 10px 20px;
-}
-
-nav ul li a{
+    display: flex;
+  }
+  
+  .navbar ul li {
+    margin-left: 20px;
+  }
+  
+  .navbar ul li a {
+    color: white;
     text-decoration: none;
-    color: #000;
-    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .navbar ul li a:hover {
+    color: #9D84EF;
+    transition: 0.3s;
+  }
+  
+  /* Home Section */
+  #home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative; /* Needed for the pseudo-element */
+    overflow: hidden; /* Ensures any overflow is hidden after cropping */
 }
 
-nav ul li a:hover{
-    color: red;
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.547), rgba(0, 0, 0, 0.556)), url('IMG_3332.jpg');
+    background-size: cover;
+    background-position: center top; /* Cropping by positioning the image */
+    filter: blur(4px); /* Apply slight blur */
+    z-index: -1; /* Ensures the image is behind the content */
 }
 
-.detel{
-    margin-left: 8%;
-    margin-top: 15%;
+/* Your content styling (remains as is) */
+.content {
+    z-index: 1; /* Content stays above the background */
+    color: white;
+    text-align: center;
 }
-
-.detel h1{
-    font-size: 50px;
-    color: #212121;
+  .intro {
+    text-align: center;
+    color: white;
+  }
+  
+  .intro h1 span {
+    color: #9D84EF;
+  }
+  
+  .cv-btn {
+    margin-top: 5px;
+    background-color: #9D84EF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .cv-btn:hover {
+    background-color: #B28FFF;
+    transition: 0.3s;
+  }
+  
+  .profile-image {
+    width: 300px;
+    border-radius: 50%;
+  }
+  
+  /* Experience Section */
+h2{
+    text-align: center;
     margin-bottom: 20px;
+  }
+  #experience {
+    padding: 50px;
+    /* text-align: left; */
+  }
+.experience-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    gap: 20px; /* Add spacing between items */
 }
 
-span{
-    color: rgb(0, 204, 255);
-    
+.experience-item {
+    width: 45%; /* This will make two items fit in a row */
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.detel p{
-    color: #555;
-    line-height: 22px;
+
+/* Alternating layout for left and right columns */
+.box1 {
+    text-align: left; /* Align content to the left for first item */
 }
 
-.detel a{
-    background: #212121;
-    padding: 10px 18px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-    display: inline-block;
-    margin: 30px 0;
-    border-radius: 5px;
+.box2 {
+    text-align: right; /* Align content to the right for the second item */
 }
-
-.images{
-    width: 45%;
-    height: 80%;
-    position: absolute;
-    bottom: 0;
-    right: 100px;
-}
-
-.images img{
+  
+  #experience h2 {
+    font-size: 2rem;
+  }
+  
+  /* Skills Section */
+  #skills {
+    padding: 50px;
+    background-color: #333;
+    color: white;
+  }
+  
+  #skills h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .skill-item {
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    background-color: #555;
+    border-radius: 30px;
+    overflow: hidden;
+    height: 20px;
+    width: 80%;
+  }
+  
+  .progress {
+    background-color: #9D84EF;
     height: 100%;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    transition: bottom 1s, left 1s;
-}
-
-.images:hover .shape{
-    bottom: 40px;
-}
-
-.images:hover .boy{
-    left: 45%;
-}
-
-.social{
-    margin-left: 8%;
-    margin-top: 100px;
-}
-
-.social a{
-    font-size: 30px;
-    color: #212121;
-    margin-right: 20px;
-}
-
-.social a:hover{
-    color: orange;
-}
+    border-radius: 30px;
+  }
+  
+  /* Contact Form Section */
+  #contact {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+  }
+  
+  form button {
+    padding: 10px 20px;
+    background-color: #9D84EF;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #B28FFF;
+    transition: 0.3s;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .social-links a {
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .social-links a:hover {
+    color: #9D84EF;
+    transition: 0.3s;
+  }
